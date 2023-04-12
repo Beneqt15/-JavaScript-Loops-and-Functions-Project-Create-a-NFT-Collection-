@@ -1,0 +1,39 @@
+// create a variable to hold your NFT's
+const myNFTs = []
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function createNFT(name, description, image) {
+    const nft = {
+        "name": name,
+        "description": description,
+        "image": image,
+    }
+    myNFTs.push(nft);
+    console.log("Minted: " + name);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function displayNFTs() {
+    for(let i = 0; i < myNFTs.length; i++){
+        console.log("\nID \t\t\t\t" + (i + 1));
+        console.log("\nName: \t\t\t" + myNFTs[i].name);
+        console.log("Description: \t\t" + myNFTs[i].description);
+        console.log("Image: \t\t\t" + myNFTs[i].image);
+    }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalNFTs() {
+    console.log("\nTotal NFTs: " + myNFTs.length);
+}
+
+// call your functions below this line
+let myNFT1 = createNFT("NFT 1", "This is the first NFT", "https://example.com/nft1.png");
+let myNFT2 = createNFT("NFT 2", "This is the second NFT", "https://example.com/nft2.png");
+let myNFT3 = createNFT("NFT 3", "This is the third NFT", "https://example.com/nft3.png");
+
+displayNFTs();
+getTotalNFTs();
